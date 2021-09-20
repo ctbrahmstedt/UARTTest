@@ -29,7 +29,7 @@
       <script>  
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
-      document.getElementById("accel_result").innerHTML = g.acc;
+      document.getElementById("accel_result").innerHTML = g.acc.x;
     });
   }
   </script>

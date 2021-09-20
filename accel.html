@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors: <br>
+  Myka Labs Bluetooth Data Collector: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -30,7 +30,7 @@
   
       <script>  
        var accel = new THREE.Vector3( 0, 0, 1 );
-       
+       var balzac = 0.5;
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
      document.getElementById("accel_result_X").innerHTML = g.acc.x;
@@ -41,7 +41,7 @@
     });
    //accel.x=-0.5;
   }
-     accel.x=parseInt(balzac)/100;
+     accel.x=parseInt(balzac);
        
        
   var scene, camera, renderer, cube;

@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -62,7 +62,7 @@ function init() {
     camera.lookAt(scene.position);
 
     //cube = new THREE.Mesh(new THREE.CubeGeometry(2, 2, 2), new THREE.MeshNormalMaterial());
- cube = new THREE.Mesh(new THREE.CylinderGeometry(5, 5, 2, 32), new THREE.MeshNormalMaterial());
+ cube = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, .25, 32), new THREE.MeshNormalMaterial());
     scene.add(cube);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });

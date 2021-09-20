@@ -1,9 +1,11 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors <br>
+  Myka Labs Bluetooth Data Collector <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
+  
   <script>  
   function getADC2() {
     UART.eval('analogRead(D29)', function(a) {
@@ -27,6 +29,8 @@
   </script>
   
       <script>  
+       var accel = new THREE.Vector3( 0, 0, 1 );
+       
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
      document.getElementById("accel_result_X").innerHTML = g.acc.x;

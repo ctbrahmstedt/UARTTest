@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors <br>
+  Myka Labs Bluetooth Data Collector <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -28,7 +28,7 @@
   
       <script>  
   function getAccel() {
-    UART.eval('getAccel()', function(g) {
+    UART.eval('Puck.accel()', function(g) {
       document.getElementById("accel_result").innerHTML = g;
     });
   }

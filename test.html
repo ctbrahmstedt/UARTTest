@@ -1,12 +1,12 @@
-a<html>
+<html>
  <head>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script>  
   function getADC2() {
-    UART.eval('analogRead(D1)', function(a) {
-      document.getElementById("ADC1_result").innerHTML = a;
+    UART.eval('analogRead(D29)', function(a) {
+      document.getElementById("ADC29_result").innerHTML = a;
     });
        UART.eval('analogRead(D2)', function(b) {
       document.getElementById("ADC2_result").innerHTML = b;
@@ -32,7 +32,7 @@ a<html>
   <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
-  <span id="ADC1_result"></span>
+  <span id="ADC29_result"></span>
   <br>
    <span id="ADC2_result"></span>
   <br>

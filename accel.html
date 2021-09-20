@@ -30,6 +30,7 @@
   
       <script>  
        var accel = new THREE.Vector3( 0, 0, 1 );
+          accel.x=0.5;
        var balzac = 0;
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
@@ -39,12 +40,12 @@
    
      
     });
-   balzac = -1.5;
-    accel.x=0.5;
-   accel.y=0.5;
-   accel.z=0.5;
+ //  balzac = -1.5;
+//    accel.x=0.5;
+//   accel.y=0.5;
+//   accel.z=0.5;
   }
-     accel.x=balzac;
+    // accel.x=balzac;
        
        
   var scene, camera, renderer, cube;

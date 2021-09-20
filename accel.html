@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -40,9 +40,7 @@
      
     });
   }
-     accel.x=accel_result_X/100;
-     accel.y=accel_result_Y/100;
-     accel.z=accel_result_Z/100;
+     accel.x=0.5;
        
        
   var scene, camera, renderer, cube;

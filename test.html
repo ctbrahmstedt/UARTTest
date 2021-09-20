@@ -4,14 +4,26 @@
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script>  
-  function getTemperature() {
+  function getADC2() {
+    UART.eval('analogRead(D2)', function(a) {
+      document.getElementById("ADC_result").innerHTML = a;
+    });
+  }
+  </script>
+  
+    <script>  
+  function getADC() {
     UART.eval('E.getTemperature()', function(t) {
       document.getElementById("result").innerHTML = t;
     });
   }
   </script>
+  
+  
   <button onclick="getTemperature()">Get Temperature</button>
   <span id="result"></span>
+  <button onclick="getADC2()">Get ADC</button>
+  <span id="ADC_result"></span>
   <button onclick="UART.write('LED1.set();\n');">LED On!</button>
   <button onclick="UART.write('LED1.reset();\n');">LED Off!</button>
   

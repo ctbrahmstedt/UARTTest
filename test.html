@@ -28,7 +28,7 @@
   
       <script>  
   function getAccel() {
-    UART.eval('E.getAccel()', function(g) {
+    UART.eval('getAccel()', function(g) {
       document.getElementById("accel_result").innerHTML = g;
     });
   }

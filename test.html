@@ -1,5 +1,6 @@
 <html>
  <head>
+  Myka Labs Bluetooth Data Collector <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -25,6 +26,14 @@
   }
   </script>
   
+      <script>  
+  function getAccel() {
+    UART.eval('E.getAccel()', function(g) {
+      document.getElementById("result").innerHTML = g;
+    });
+  }
+  </script>
+  
   
   <button onclick="getTemperature()">Get Temperature</button>
   <br>
@@ -37,6 +46,10 @@
    <span id="ADC2_result"></span>
   <br>
    <span id="ADC28_result"></span>
+  <br>
+    <button onclick="getAccel()">Get Temperature</button>
+  <br>
+     <span id="accel_result"></span>
   <br>
   <button onclick="UART.write('LED1.set();\n');">LED On!</button>
   <button onclick="UART.write('LED1.reset();\n');">LED Off!</button>

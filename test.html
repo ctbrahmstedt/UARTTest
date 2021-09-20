@@ -29,7 +29,9 @@
       <script>  
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
-      document.getElementById("accel_result").innerHTML = g.acc.x;
+     document.getElementById("accel_result_X").innerHTML = g.acc.x;
+     document.getElementById("accel_result_Y").innerHTML = g.acc.y;
+     document.getElementById("accel_result_Z").innerHTML = g.acc.z;
     });
   }
   </script>
@@ -49,7 +51,11 @@
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>
-     <span id="accel_result"></span>
+     X:<span id="accel_result_X"></span>
+  <br>
+     Y:<span id="accel_result_Y"></span>
+  <br>
+     Z:<span id="accel_result_Z"></span>
   <br>
   <button onclick="UART.write('LED1.set();\n');">LED On!</button>
   <button onclick="UART.write('LED1.reset();\n');">LED Off!</button>

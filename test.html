@@ -5,8 +5,14 @@ a<html>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script>  
   function getADC2() {
-    UART.eval('analogRead(D2)', function(a) {
-      document.getElementById("ADC_result").innerHTML = a;
+    UART.eval('analogRead(D1)', function(a) {
+      document.getElementById("ADC1_result").innerHTML = a;
+    });
+       UART.eval('analogRead(D2)', function(b) {
+      document.getElementById("ADC2_result").innerHTML = b;
+    });
+       UART.eval('analogRead(D28)', function(c) {
+      document.getElementById("ADC28_result").innerHTML = c;
     });
   }
   </script>
@@ -21,9 +27,17 @@ a<html>
   
   
   <button onclick="getTemperature()">Get Temperature</button>
+  <br>
   <span id="result"></span>
+  <br>
   <button onclick="getADC2()">Get ADC</button>
-  <span id="ADC_result"></span>
+  <br>
+  <span id="ADC1_result"></span>
+  <br>
+   <span id="ADC2_result"></span>
+  <br>
+   <span id="ADC28_result"></span>
+  <br>
   <button onclick="UART.write('LED1.set();\n');">LED On!</button>
   <button onclick="UART.write('LED1.reset();\n');">LED Off!</button>
   

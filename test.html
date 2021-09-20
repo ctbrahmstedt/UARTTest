@@ -1,4 +1,4 @@
-<html>
+a<html>
  <head>
  </head>
  <body>
@@ -12,7 +12,7 @@
   </script>
   
     <script>  
-  function getADC() {
+  function getTemperature() {
     UART.eval('E.getTemperature()', function(t) {
       document.getElementById("result").innerHTML = t;
     });

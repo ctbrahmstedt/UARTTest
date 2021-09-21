@@ -9,13 +9,13 @@
   <script>  
   function getADC2() {
     UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC29_result").innerHTML = math.trunc(a*10);
+      document.getElementById("ADC29_result").innerHTML = Math.trunc(a*10);
     });
        UART.eval('analogRead(D2)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = math.trunc(b*10);
+      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*10);
     });
        UART.eval('analogRead(D28)', function(c) {
-      document.getElementById("ADC28_result").innerHTML = math.trunc(c*10);
+      document.getElementById("ADC28_result").innerHTML = Math.trunc(c*10);
     });
   }
   </script>

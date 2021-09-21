@@ -9,13 +9,13 @@
   <script>  
   function getADC2() {
     UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC29_result").innerHTML = a;
+      document.getElementById("ADC29_result").innerHTML = math.trunc(a*10);
     });
        UART.eval('analogRead(D2)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = b;
+      document.getElementById("ADC2_result").innerHTML = math.trunc(b*10);
     });
        UART.eval('analogRead(D28)', function(c) {
-      document.getElementById("ADC28_result").innerHTML = c;
+      document.getElementById("ADC28_result").innerHTML = math.trunc(c*10);
     });
   }
   </script>
@@ -62,7 +62,7 @@ function init() {
     camera.lookAt(scene.position);
 
     //cube = new THREE.Mesh(new THREE.CubeGeometry(2, 2, 2), new THREE.MeshNormalMaterial());
- cube = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, .25, 32,1,false,0,3.14), new THREE.MeshNormalMaterial());
+ cube = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, .25, 32,1,false,0,2*3.14), new THREE.MeshNormalMaterial());
     scene.add(cube);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -86,11 +86,11 @@ render();
   <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
-  <span id="ADC29_result"></span>
+  <span id="ADC29_result"></span>mm
   <br>
-   <span id="ADC2_result"></span>
+   <span id="ADC2_result"></span>mm
   <br>
-   <span id="ADC28_result"></span>
+   <span id="ADC28_result"></span>mm
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

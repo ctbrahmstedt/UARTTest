@@ -1,19 +1,19 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors <br>
+  Myka Labs Bluetooth Data Collector <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script>  
   function getADC2() {
     UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC29_result").innerHTML = a;
+      document.getElementById("ADC29_result").innerHTML = Math.trunc(a*10);
     });
        UART.eval('analogRead(D2)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = b;
+      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*10);
     });
        UART.eval('analogRead(D28)', function(c) {
-      document.getElementById("ADC28_result").innerHTML = c;
+      document.getElementById("ADC28_result").innerHTML = Math.trunc(c*10);
     });
   }
   </script>
@@ -43,11 +43,11 @@
   <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
-  <span id="ADC29_result"></span>
+  <span id="ADC29_result"></span>mm
   <br>
-   <span id="ADC2_result"></span>
+   <span id="ADC2_result"></span>mm
   <br>
-   <span id="ADC28_result"></span>
+   <span id="ADC28_result"></span>mm
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

@@ -8,6 +8,10 @@
   
   <script>  
   function getADC2() {
+   UART.write('LED1.set();\n');
+   //pinMode(D2, 'input_pullup');
+ //  pinMode(D28, 'input_pullup');
+ //  pinMode(D29, 'input_pullup');
     UART.eval('analogRead(D29)', function(a) {
       document.getElementById("ADC29_result").innerHTML = Math.trunc(a*1000);
     });

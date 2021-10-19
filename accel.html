@@ -12,10 +12,31 @@
       document.getElementById("Puck_ID").innerHTML = d;
     });
    if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
-//  UART.write('LED1.set();\n');
+  UART.write('LED1.set();\n');
+    var A1_hi = 792;
+    var A2_hi = 7033;
+    var A3_hi = 748;
+    var A1_lo = 698;
+    var A2_lo = 6093;
+    var A3_lo = 654;
 }
-   else{
- //   UART.write('LED2.set();\n');
+   else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe024"){
+    UART.write('LED2.set();\n');
+    var A1_hi = 0;
+    var A2_hi = 0;
+    var A3_hi = 0;
+    var A1_lo = 0;
+    var A2_lo = 0;
+    var A3_lo = 0;
+   }
+   else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe025"){
+    UART.write('LED3.set();\n');
+    var A1_hi = 0;
+    var A2_hi = 0;
+    var A3_hi = 0;
+    var A1_lo = 0;
+    var A2_lo = 0;
+    var A3_lo = 0;
    }
 //  UART.write('LED1.set();\n');
   UART.write('pinMode(D2, "input_pullup");\n');
@@ -26,15 +47,17 @@
    
    
     UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC29_result").innerHTML = Math.trunc(a*1000);
+      document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
     });
        UART.eval('analogRead(D2)', function(b) {
       document.getElementById("ADC2_result").innerHTML = Math.trunc(b*10000);
     });
        UART.eval('analogRead(D28)', function(c) {
-      document.getElementById("ADC28_result").innerHTML = Math.trunc(c*1000);
+      document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
     });
-     document.getElementById("lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC29_result").innerHTML)-697)/(791-697))*10)/10;
+   document.getElementById("A1_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC1_result").innerHTML)-A1_lo)/(A1_hi-A1_lo))*10)/10;
+   document.getElementById("A2_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC2_result").innerHTML)-A2_lo)/(A2_hi-A2_lo))*10)/10;
+   document.getElementById("A3_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC3_result").innerHTML)-A3_lo)/(A3_hi-A3_lo))*10)/10;
   }
   </script>
   
@@ -118,13 +141,17 @@ render();
   <br>
   Puck ID: <span id="Puck_ID"></span>
   <br>
-  <span id="ADC29_result"></span>mm
+  A1_raw: <span id="ADC1_result"></span>
   <br>
-   <span id="ADC2_result"></span>mm
+  A2_raw: <span id="ADC2_result"></span>
   <br>
-   <span id="ADC28_result"></span>mm
+  A3_raw: <span id="ADC3_result"></span>
   <br>
-  Lerpp: <span id="lerp"></span>mm
+  A1_dist: <span id="A1_lerp"></span>mm
+  <br>
+  A2_dist: <span id="A2_lerp"></span>mm
+  <br>
+  A3_dist: <span id="A3_lerp"></span>mm
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

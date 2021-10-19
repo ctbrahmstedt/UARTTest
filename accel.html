@@ -34,7 +34,7 @@
        UART.eval('analogRead(D28)', function(c) {
       document.getElementById("ADC28_result").innerHTML = Math.trunc(c*1000);
     });
-     document.getElementById("lerp").innerHTML = Math.lerp(730, 813,792)*4.3;
+     document.getElementById("lerp").innerHTML = lerp(730,813,792);
   }
   </script>
   
@@ -124,7 +124,7 @@ render();
   <br>
    <span id="ADC28_result"></span>mm
   <br>
-  Lerpp: <span id="lerp"></span>mm
+  Lerp: <span id="lerp"></span>mm
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

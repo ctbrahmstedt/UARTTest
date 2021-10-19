@@ -42,6 +42,7 @@
     UART.eval('E.getTemperature()', function(t) {
       document.getElementById("result").innerHTML = t;
     });
+  document.getElementById("Lerp").innerHTML = lerp(730, 813, document.getElementById("ADC29_result").innerHTML);
   }
   </script>
   
@@ -121,6 +122,8 @@ render();
    <span id="ADC2_result"></span>mm
   <br>
    <span id="ADC28_result"></span>mm
+  <br>
+  Lerp: <span id="lerp"></span>mm
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

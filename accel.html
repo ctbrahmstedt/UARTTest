@@ -11,7 +11,7 @@
  UART.eval('getSerial()', function(d) {
       document.getElementById("Puck_ID").innerHTML = d;
     });
-   if (d=="5bd762da-bea00f93") {
+   if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
   UART.write('LED1.set();\n');
 }
    else{
@@ -103,7 +103,7 @@ render();
   <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
-  Puckk ID: <span id="Puck_ID"></span>
+  Puck ID: <span id="Puck_ID"></span>
   <br>
   <span id="ADC29_result"></span>mm
   <br>

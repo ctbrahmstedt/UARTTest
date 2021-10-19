@@ -46,6 +46,14 @@
   </script>
   
       <script>  
+  function getBattery() {
+    UART.eval('E.getBattery()', function(b) {
+      document.getElementById("battery").innerHTML = b;
+    });
+  }
+  </script>
+  
+      <script>  
        var accel = new THREE.Vector3( 0, 0, 1 );
           accel.x=-0.5;
        var balzac = 0;
@@ -96,7 +104,10 @@ init();
 render();
   </script>
   
-  
+  <button onclick="getBattery()">Get Battery</button>
+  <br>
+   <span id="battery"></span>
+  <br>
   <button onclick="getTemperature()">Get Temperature</button>
   <br>
   <span id="result"></span>

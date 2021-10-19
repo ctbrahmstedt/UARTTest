@@ -8,7 +8,7 @@
   
   <script>  
   function getADC2() {
-  // UART.write('LED1.set();\n');
+   UART.write('LED1.set();\n');
    UART.write(pinMode(D2, 'input_pullup');\n');
  UART.write(pinMode(D28, 'input_pullup');\n');
  UART.write(pinMode(D29, 'input_pullup');\n');
@@ -96,7 +96,7 @@ render();
   <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
-  <span id="Puck_ID"></span>
+  Puck ID: <span id="Puck_ID"></span>
   <br>
   <span id="ADC29_result"></span>mm
   <br>

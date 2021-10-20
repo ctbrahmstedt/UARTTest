@@ -92,56 +92,7 @@
   }
   </script>
   
-      <script>  
-       var accel = new THREE.Vector3( 0, 0, 1 );
-          accel.x=-0.5;
-       var balzac = 0;
-  function getAccel() {
-    UART.eval('Puck.accel()', function(g) {
-     document.getElementById("accel_result_X").innerHTML = g.acc.x;
-     document.getElementById("accel_result_Y").innerHTML = g.acc.y;
-     document.getElementById("accel_result_Z").innerHTML = g.acc.z;
-    accel.x=g.acc.x/1273;
-      accel.y=g.acc.y/1273;
-     accel.z=g.acc.z/1273;
-    });
 
- //  balzac = -1.5;
-   // accel.x=accel_result_X;
-//   accel.y=0.5;
- //  accel.z=g.acc.z;
-      render();
-  }
-    // accel.x=balzac;
-       
-       
-  var scene, camera, renderer, cube;
-var WIDTH  = window.innerWidth;
-var HEIGHT = window.innerHeight/2;
-function init() {
-    scene = new THREE.Scene();
-
-    camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
-    camera.position.set(0, 3.5, 5);
-    camera.lookAt(scene.position);
-
-    //cube = new THREE.Mesh(new THREE.CubeGeometry(2, 2, 2), new THREE.MeshNormalMaterial());
- cube = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, .25*2.5, 32,1,false,0,2*3.14), new THREE.MeshNormalMaterial());
-    scene.add(cube);
-
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(WIDTH, HEIGHT);
-
-    document.body.appendChild(renderer.domElement);
-}
-function render() {
-    cube.lookAt(accel);
-    renderer.render(scene, camera);
-}
-
-init();
-render();
-  </script>
   <h1 style="font-size:70px">
   <button onclick="getADC2()"style="font-size : 70px; width: 500px; height: 125px">Get ADC</button>
   <br>
@@ -185,5 +136,56 @@ render();
       <br>
   <button onclick="UART.write('LED3.set();\n');">B LED On!</button>
   <button onclick="UART.write('LED3.reset();\n');">B LED Off!</button>
+  
+        <script>  
+       var accel = new THREE.Vector3( 0, 0, 1 );
+          accel.x=-0.5;
+       var balzac = 0;
+  function getAccel() {
+    UART.eval('Puck.accel()', function(g) {
+     document.getElementById("accel_result_X").innerHTML = g.acc.x;
+     document.getElementById("accel_result_Y").innerHTML = g.acc.y;
+     document.getElementById("accel_result_Z").innerHTML = g.acc.z;
+    accel.x=g.acc.x/1273;
+      accel.y=g.acc.y/1273;
+     accel.z=g.acc.z/1273;
+    });
+
+ //  balzac = -1.5;
+   // accel.x=accel_result_X;
+//   accel.y=0.5;
+ //  accel.z=g.acc.z;
+      render();
+  }
+    // accel.x=balzac;
+       
+       
+  var scene, camera, renderer, cube;
+var WIDTH  = window.innerWidth-10;
+var HEIGHT = window.innerHeight/2;
+function init() {
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(70, WIDTH / HEIGHT, 1, 10);
+    camera.position.set(0, 3.5, 5);
+    camera.lookAt(scene.position);
+
+    //cube = new THREE.Mesh(new THREE.CubeGeometry(2, 2, 2), new THREE.MeshNormalMaterial());
+ cube = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, .25*2.5, 32,1,false,0,2*3.14), new THREE.MeshNormalMaterial());
+    scene.add(cube);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(WIDTH, HEIGHT);
+
+    document.body.appendChild(renderer.domElement);
+}
+function render() {
+    cube.lookAt(accel);
+    renderer.render(scene, camera);
+}
+
+init();
+render();
+  </script>
  </body>
 </html>

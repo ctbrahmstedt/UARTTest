@@ -12,7 +12,7 @@
       document.getElementById("Puck_ID").innerHTML = d;
   
     });
-   function convert();
+    convert();
        UART.eval('analogRead(D29)', function(a) {
       document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
     });

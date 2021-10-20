@@ -13,6 +13,7 @@
     });
    if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
 //  UART.write('LED1.set();\n');
+    document.getElementById("nick_name").innerHTML="Puck 1";
     var A1_hi = 792;
     var A2_hi = 6777;
     var A3_hi = 775;
@@ -22,6 +23,7 @@
 }
    else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe024"){
   //  UART.write('LED2.set();\n');
+    document.getElementById("nick_name").innerHTML="Puck 2";
     var A1_hi = 875;
     var A2_hi = 7875;
     var A3_hi = 777;
@@ -30,6 +32,7 @@
     var A3_lo = 658;
    }
    else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe025"){
+    document.getElementById("nick_name").innerHTML="Puck 3";
     UART.write('LED3.set();\n');
     var A1_hi = 0;
     var A2_hi = 0;
@@ -140,6 +143,8 @@ render();
   <button onclick="getADC2()">Get ADC</button>
   <br>
   Puck ID: <span id="Puck_ID"></span>
+  <br>
+  Nick Name: : <span id="nick_name"></span>
   <br>
   A1_raw: <span id="ADC1_result"></span>
   <br>

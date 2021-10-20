@@ -142,15 +142,7 @@ function render() {
 init();
 render();
   </script>
-<h1 style="font-size:10vw">Hello World</h1>
-  <button onclick="getBattery()">Get Battery</button>
-  <br>
-   <span id="battery"></span>
-  <br>
-  <button onclick="getTemperature()">Get Temperature</button>
-  <br>
-  <span id="result"></span>
-  <br>
+  <h1 style="font-size:10vw">
   <button onclick="getADC2()">Get ADC</button>
   <br>
   Puck ID: <span id="Puck_ID"></span>
@@ -167,7 +159,15 @@ render();
   <br>
   A2_dist: <span id="A2_lerp"></span>mm
   <br>
-  A3_dist: <span id="A3_lerp"></span>mm
+  A3_dist: <span id="A3_lerp"></span>mm  </h1>
+  <br>
+   <button onclick="getBattery()">Get Battery</button>
+  <br>
+   <span id="battery"></span>
+  <br>
+  <button onclick="getTemperature()">Get Temperature</button>
+  <br>
+  <span id="result"></span>
   <br>
     <button onclick="getAccel()">Get Accel</button>
   <br>

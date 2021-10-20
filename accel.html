@@ -5,7 +5,7 @@
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
-  <body onload="getMobile()">
+  
   <script>  
   function getADC2() {
  UART.eval('getSerial()', function(d) {
@@ -133,14 +133,14 @@ var touchDevice = ('ontouchstart' in document.documentElement);
   <br>
      Z:<span id="accel_result_Z"></span></p1>
   <br>
-  <button onclick="UART.write('LED1.set();\n');"style="font-size : 70px; width: 450px; height: 125px">R LED On!</button>
-  <button onclick="UART.write('LED1.reset();\n');"style="font-size : 70px; width: 450px; height: 125px">R LED Off!</button>
+  <button onclick="UART.write('LED1.set();\n');"style="font-size : 60px; width: 450px; height: 125px">R LED On!</button>
+  <button onclick="UART.write('LED1.reset();\n');"style="font-size : 60px; width: 450px; height: 125px">R LED Off!</button>
     <br>
-  <button onclick="UART.write('LED2.set();\n');"style="font-size : 70px; width: 450px; height: 125px">G LED On!</button>
-  <button onclick="UART.write('LED2.reset();\n');"style="font-size : 70px; width: 450px; height: 125px">G LED Off!</button>
+  <button onclick="UART.write('LED2.set();\n');"style="font-size : 60px; width: 450px; height: 125px">G LED On!</button>
+  <button onclick="UART.write('LED2.reset();\n');"style="font-size : 60px; width: 450px; height: 125px">G LED Off!</button>
       <br>
-  <button onclick="UART.write('LED3.set();\n');"style="font-size : 70px; width: 450px; height: 125px">B LED On!</button>
-  <button onclick="UART.write('LED3.reset();\n');"style="font-size : 70px; width: 450px; height: 125px">B LED Off!</button>
+  <button onclick="UART.write('LED3.set();\n');"style="font-size : 60px; width: 450px; height: 125px">B LED On!</button>
+  <button onclick="UART.write('LED3.reset();\n');"style="font-size : 60px; width: 450px; height: 125px">B LED Off!</button>
   <br>
         <script>  
        var accel = new THREE.Vector3( 0, 0, 1 );

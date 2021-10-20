@@ -118,7 +118,7 @@ function init() {
     camera.lookAt(scene.position);
 
     //cube = new THREE.Mesh(new THREE.CubeGeometry(2, 2, 2), new THREE.MeshNormalMaterial());
- cube = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, .25*1.5, 32,1,false,0,2*3.14), new THREE.MeshNormalMaterial());
+ cube = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, .25*2.5, 32,1,false,0,2*3.14), new THREE.MeshNormalMaterial());
     scene.add(cube);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });

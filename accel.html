@@ -21,7 +21,9 @@
        UART.eval('analogRead(D28)', function(c) {
       document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
     });
-   if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
+  
+   function convert(){
+     if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
 //  UART.write('LED1.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 1";
     document.getElementById("A1_lerp").innerHTML = -433-1.1+1.15*document.getElementById("ADC1_result").innerHTML-7.54e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
@@ -84,6 +86,9 @@
    document.getElementById("A2_lerp").innerHTML = "-- ";
    document.getElementById("A3_lerp").innerHTML = "-- ";    
      }
+    
+    
+   }
   
   
   }
@@ -131,6 +136,8 @@ var touchDevice = ('ontouchstart' in document.documentElement);
   A2_raw: <span id="ADC2_result"></span>
   <br>
   A3_raw: <span id="ADC3_result"></span>
+  <br>
+  <button onclick="convert()"style="font-size : 70px; width: 500px; height: 125px">Convert</button>
   <br>
   A1_dist: <span id="A1_lerp"></span>mm
   <br>

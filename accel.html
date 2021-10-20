@@ -5,7 +5,7 @@
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
-  
+  <body onload="getMobile()">
   <script>  
   function getADC2() {
  UART.eval('getSerial()', function(d) {
@@ -82,8 +82,9 @@
     });
 
   }
-     
+function getMobile() {     
 var touchDevice = ('ontouchstart' in document.documentElement);
+}
   </script>
   
       <script>  

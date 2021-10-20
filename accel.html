@@ -15,20 +15,20 @@
 //  UART.write('LED1.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 1";
     var A1_hi = 792;
-    var A2_hi = 6777;
+    var A2_hi = 678;
     var A3_hi = 775;
     var A1_lo = 693;
-    var A2_lo = 6027;
+    var A2_lo = 603;
     var A3_lo = 631;
 }
    else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe024"){
   //  UART.write('LED2.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 2";
     var A1_hi = 875;
-    var A2_hi = 7839;
+    var A2_hi = 784;
     var A3_hi = 777;
     var A1_lo = 664;
-    var A2_lo = 7055;
+    var A2_lo = 706;
     var A3_lo = 658;
    }
    else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe025"){
@@ -53,7 +53,7 @@
       document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
     });
        UART.eval('analogRead(D2)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*10000);
+      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*1000);
     });
        UART.eval('analogRead(D28)', function(c) {
       document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);

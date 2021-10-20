@@ -79,10 +79,10 @@
 //   document.getElementById("A2_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC2_result").innerHTML)-A2_lo)/(A2_hi-A2_lo))*10)/10;
 //   document.getElementById("A3_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC3_result").innerHTML)-A3_lo)/(A3_hi-A3_lo))*10)/10;
   
-  if((document.getElementById("ADC1_result").innerHTML <200)||(document.getElementById("ADC3_result").innerHTML > 990)){
- //  document.getElementById("A1_lerp").innerHTML = "-- ";
-//   document.getElementById("A2_lerp").innerHTML = "-- ";
-//   document.getElementById("A3_lerp").innerHTML = "-- ";    
+  if((document.getElementById("ADC3_result").innerHTML <200)||(document.getElementById("ADC3_result").innerHTML > 990)){
+   document.getElementById("A1_lerp").innerHTML = "-- ";
+   document.getElementById("A2_lerp").innerHTML = "-- ";
+   document.getElementById("A3_lerp").innerHTML = "-- ";    
      }
   
   

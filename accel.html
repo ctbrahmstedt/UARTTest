@@ -10,9 +10,9 @@
   function getADC2() {
  UART.eval('getSerial()', function(d) {
       document.getElementById("Puck_ID").innerHTML = d;
-  function convert()
+  
     });
-   
+   function convert();
        UART.eval('analogRead(D29)', function(a) {
       document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
     });

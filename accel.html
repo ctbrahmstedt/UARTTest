@@ -48,7 +48,7 @@
   UART.write('pinMode(D2, "input_pullup");\n');
  UART.write('pinMode(D28, "input_pullup");\n');
  UART.write('pinMode(D29, "input_pullup");\n');
-            
+ document.getElementById("is_mobile").innerHTML= touchDevice;       
 
    
    
@@ -82,6 +82,8 @@
     });
 
   }
+     
+var touchDevice = ('ontouchstart' in document.documentElement);
   </script>
   
       <script>  
@@ -95,6 +97,8 @@
 
   <h1 style="font-size:70px">
   <button onclick="getADC2()"style="font-size : 70px; width: 500px; height: 125px">Get ADC</button>
+  <br>
+   Is Mobile?: <span id="is_mobile"></span>
   <br>
   Puck ID: <span id="Puck_ID"></span>
   <br>

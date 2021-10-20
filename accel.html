@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -24,9 +24,9 @@
    if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
 //  UART.write('LED1.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 1";
-    document.getElementById("A1_lerp").innerHTML = 0.0431*document.getElementById("ADC1_result").innerHTML;
-     document.getElementById("A2_lerp").innerHTML = 1.59*10^(-30)*Math.exp(0.104*document.getElementById("ADC2_result").innerHTML);
-     document.getElementById("A3_lerp").innerHTML = 3.05*10^(-5)*Math.exp(0.015*document.getElementById("ADC3_result").innerHTML);
+    document.getElementById("A1_lerp").innerHTML = 0.0431*document.getElementById("ADC1_result").innerHTML-30;
+     document.getElementById("A2_lerp").innerHTML = 1.59*e(-30)*Math.exp(0.104*document.getElementById("ADC2_result").innerHTML);
+     document.getElementById("A3_lerp").innerHTML = 3.05*e(-5)*Math.exp(0.015*document.getElementById("ADC3_result").innerHTML);
     var A1_hi = 792;
     var A2_hi = 678;
     var A3_hi = 775;
@@ -37,6 +37,9 @@
    else if (document.getElementById("Puck_ID").innerHTML=="7c0e8486-4fefe024"){
   //  UART.write('LED2.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 2";
+     document.getElementById("A1_lerp").innerHTML = 0.0431*document.getElementById("ADC1_result").innerHTML-30;
+     document.getElementById("A2_lerp").innerHTML = 1.59*e(-30)*Math.exp(0.104*document.getElementById("ADC2_result").innerHTML);
+     document.getElementById("A3_lerp").innerHTML = 3.05*e(-5)*Math.exp(0.015*document.getElementById("ADC3_result").innerHTML);
     var A1_hi = 875;
     var A2_hi = 791;
     var A3_hi = 777;

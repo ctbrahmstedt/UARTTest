@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors: <br>
+  Myka Labs Bluetooth Data Collector: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -53,7 +53,7 @@
    else if (document.getElementById("Puck_ID").innerHTML=="21c59171-3bd6efe7"){
     document.getElementById("nick_name").innerHTML="Puck 3";
    // UART.write('LED3.set();\n');
-    document.getElementById("A1_lerp").innerHTML = 0.0383*document.getElementById("ADC1_result").innerHTML-24.3;
+    document.getElementById("A1_lerp").innerHTML = -116+0.306*document.getElementById("ADC1_result").innerHTML-1.93e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
     document.getElementById("A2_lerp").innerHTML = 131-0.436*document.getElementById("ADC2_result").innerHTML+3.62e-4*Math.pow(document.getElementById("ADC2_result").innerHTML,2);
     document.getElementById("A3_lerp").innerHTML = 0.0706*document.getElementById("ADC3_result").innerHTML-55.1;
     var A1_hi = 0;

@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -24,9 +24,9 @@
    if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
 //  UART.write('LED1.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 1";
-    document.getElementById("A1_lerp").innerHTML = -421+1.11*document.getElementById("ADC1_result").innerHTML-7.29e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
-     document.getElementById("A2_lerp").innerHTML = 0.0713*document.getElementById("ADC2_result").innerHTML-42.7;
-     document.getElementById("A3_lerp").innerHTML = 1.03e-8*Math.exp(0.027*document.getElementById("ADC3_result").innerHTML);
+    document.getElementById("A1_lerp").innerHTML = -433-1.1+1.15*document.getElementById("ADC1_result").innerHTML-7.54e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
+     document.getElementById("A2_lerp").innerHTML = 0.0621*document.getElementById("ADC2_result").innerHTML-37.1;
+     document.getElementById("A3_lerp").innerHTML = 7.61e-9*Math.exp(0.0274*document.getElementById("ADC3_result").innerHTML);
     var A1_hi = 792;
     var A2_hi = 678;
     var A3_hi = 775;

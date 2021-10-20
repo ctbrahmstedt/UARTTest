@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectors: <br>
+  Myka Labs Bluetooth Data Collector: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -11,9 +11,22 @@
  UART.eval('getSerial()', function(d) {
       document.getElementById("Puck_ID").innerHTML = d;
     });
+   
+       UART.eval('analogRead(D29)', function(a) {
+      document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
+    });
+       UART.eval('analogRead(D2)', function(b) {
+      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*1000);
+    });
+       UART.eval('analogRead(D28)', function(c) {
+      document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
+    });
    if (document.getElementById("Puck_ID").innerHTML=="5bd762da-bea00f93") {
 //  UART.write('LED1.set();\n');
     document.getElementById("nick_name").innerHTML="Puck 1";
+    document.getElementById("A1_lerp").innerHTML = 0.0431*document.getElementById("ADC1_result").innerHTML;
+     document.getElementById("A2_lerp").innerHTML = 1.59*10^(-30)*Math.exp(0.104*document.getElementById("ADC2_result").innerHTML);
+     document.getElementById("A3_lerp").innerHTML = 3.05*10^(-5)*Math.exp(0.015*document.getElementById("ADC3_result").innerHTML);
     var A1_hi = 792;
     var A2_hi = 678;
     var A3_hi = 775;
@@ -52,18 +65,10 @@
 
    
    
-    UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
-    });
-       UART.eval('analogRead(D2)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*1000);
-    });
-       UART.eval('analogRead(D28)', function(c) {
-      document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
-    });
-   document.getElementById("A1_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC1_result").innerHTML)-A1_lo)/(A1_hi-A1_lo))*10)/10;
-   document.getElementById("A2_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC2_result").innerHTML)-A2_lo)/(A2_hi-A2_lo))*10)/10;
-   document.getElementById("A3_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC3_result").innerHTML)-A3_lo)/(A3_hi-A3_lo))*10)/10;
+
+//   document.getElementById("A1_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC1_result").innerHTML)-A1_lo)/(A1_hi-A1_lo))*10)/10;
+//   document.getElementById("A2_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC2_result").innerHTML)-A2_lo)/(A2_hi-A2_lo))*10)/10;
+//   document.getElementById("A3_lerp").innerHTML = Math.trunc(4.3*(((document.getElementById("ADC3_result").innerHTML)-A3_lo)/(A3_hi-A3_lo))*10)/10;
   
   if((document.getElementById("ADC1_result").innerHTML <200)||(document.getElementById("ADC3_result").innerHTML > 990)){
    document.getElementById("A1_lerp").innerHTML = "-- ";

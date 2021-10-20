@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -40,6 +40,11 @@
      document.getElementById("A1_lerp").innerHTML = -60.2+(0.14*document.getElementById("ADC1_result").innerHTML)-(7.48e-5*Math.pow(document.getElementById("ADC1_result").innerHTML,2));
      document.getElementById("A2_lerp").innerHTML = 2.92e-11*Math.exp(0.0325*document.getElementById("ADC2_result").innerHTML);
      document.getElementById("A3_lerp").innerHTML = 247-(.736*document.getElementById("ADC3_result").innerHTML)+(5.49e-4*Math.pow(document.getElementById("ADC3_result").innerHTML,2));
+    
+    document.getElementById("A1_lerp").innerHTML= Math.trunc(document.getElementById("A1_lerp").innerHTML*10)/10;
+    document.getElementById("A2_lerp").innerHTML= Math.trunc(document.getElementById("A2_lerp").innerHTML*10)/10;
+    document.getElementById("A3_lerp").innerHTML= Math.trunc(document.getElementById("A3_lerp").innerHTML*10)/10;
+    
     var A1_hi = 875;
     var A2_hi = 791;
     var A3_hi = 777;

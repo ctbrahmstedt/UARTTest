@@ -53,7 +53,7 @@
    else if (document.getElementById("Puck_ID").innerHTML=="21c59171-3bd6efe7"){
     document.getElementById("nick_name").innerHTML="Puck 3";
    // UART.write('LED3.set();\n');
-    document.getElementById("A1_lerp").innerHTML = 166-0.564*document.getElementById("ADC1_result").innerHTML-4.79e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
+    document.getElementById("A1_lerp").innerHTML = 166-0.564*document.getElementById("ADC1_result").innerHTML+4.79e-4*Math.pow(document.getElementById("ADC1_result").innerHTML,2);
     document.getElementById("A2_lerp").innerHTML = 18.3-0.102*document.getElementById("ADC2_result").innerHTML+1.14e-4*Math.pow(document.getElementById("ADC2_result").innerHTML,2);
     document.getElementById("A3_lerp").innerHTML = 4.74e-13*Math.exp(0.0367*document.getElementById("ADC3_result").innerHTML);
     var A1_hi = 0;
@@ -166,7 +166,7 @@ var touchDevice = ('ontouchstart' in document.documentElement);
         <script>  
        var accel = new THREE.Vector3( 0, 0, 1 );
           accel.x=-0.5;
-       var balzac = 0;
+     
   function getAccel() {
     UART.eval('Puck.accel()', function(g) {
      document.getElementById("accel_result_X").innerHTML = g.acc.x;
@@ -177,13 +177,14 @@ var touchDevice = ('ontouchstart' in document.documentElement);
      accel.z=g.acc.z/1273;
     });
 
- //  balzac = -1.5;
+
    // accel.x=accel_result_X;
 //   accel.y=0.5;
  //  accel.z=g.acc.z;
       render();
   }
-    // accel.x=balzac;
+  
+         
        
        
   var scene, camera, renderer, cube;

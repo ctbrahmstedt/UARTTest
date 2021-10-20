@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collectorss: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -90,13 +90,14 @@
   function getTemperature() {
     UART.eval('E.getTemperature()', function(t) {
       document.getElementById("result").innerHTML = t;
-    }
+    });}
+     
    function initialize() { 
   UART.write('pinMode(D2, "input_pullup");\n');
  UART.write('pinMode(D28, "input_pullup");\n');
  UART.write('pinMode(D29, "input_pullup");\n');
    }
-  }
+  
 function getMobile() {     
 var touchDevice = ('ontouchstart' in document.documentElement);
   document.getElementById("is_mobile").innerHTML= touchDevice;

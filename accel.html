@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector: <br>
+  Myka Labs Bluetooth Data Collectors: <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -16,10 +16,10 @@
        UART.eval('analogRead(D29)', function(a) {
       document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
     });
-       UART.eval('analogRead(D2)', function(b) {
+       UART.eval('analogRead(D30)', function(b) {
       document.getElementById("ADC2_result").innerHTML = Math.trunc(b*1000);
     });
-       UART.eval('analogRead(D28)', function(c) {
+       UART.eval('analogRead(D31)', function(c) {
       document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
     }); }
   

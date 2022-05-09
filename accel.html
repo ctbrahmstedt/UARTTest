@@ -14,13 +14,13 @@
     });
     convert();
        UART.eval('analogRead(D29)', function(a) {
-      document.getElementById("ADC1_result").innerHTML = Math.trunc(a*1000);
+      document.getElementById("ADC1_result").innerHTML = Math.trunc(a*10000);
     });
        UART.eval('analogRead(D30)', function(b) {
-      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*1000);
+      document.getElementById("ADC2_result").innerHTML = Math.trunc(b*10000);
     });
        UART.eval('analogRead(D31)', function(c) {
-      document.getElementById("ADC3_result").innerHTML = Math.trunc(c*1000);
+      document.getElementById("ADC3_result").innerHTML = Math.trunc(c*10000);
     }); }
   
    function convert(){

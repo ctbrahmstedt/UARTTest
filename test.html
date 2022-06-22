@@ -6,13 +6,16 @@
   <script src="https://www.espruino.com/js/uart.js"></script>
   <script>  
   function getADC2() {
+ UART.write('pinMode(D29, "input_pullup");\n');
+ UART.write('pinMode(D30, "input_pullup");\n');
+ UART.write('pinMode(D31, "input_pullup");\n');
     UART.eval('analogRead(D29)', function(a) {
       document.getElementById("ADC29_result").innerHTML = a;
     });
-       UART.eval('analogRead(D2)', function(b) {
+       UART.eval('analogRead(D30)', function(b) {
       document.getElementById("ADC2_result").innerHTML = b;
     });
-       UART.eval('analogRead(D28)', function(c) {
+       UART.eval('analogRead(D31)', function(c) {
       document.getElementById("ADC28_result").innerHTML = c;
     });
   }
@@ -35,30 +38,15 @@
     });
   }
   </script>
-  
-  
-  <button onclick="getTemperature()">Get Temperature</button>
-  <br>
-  <span id="result"></span>
-  <br>
   <button onclick="getADC2()">Get ADC</button>
   <br>
   <span id="ADC29_result"></span>
   <br>
-   <span id="ADC2_result"></span>
+   <span id="ADC30_result"></span>
   <br>
-   <span id="ADC28_result"></span>
+   <span id="ADC31_result"></span>
   <br>
-    <button onclick="getAccel()">Get Accel</button>
-  <br>
-     X:<span id="accel_result_X"></span>
-  <br>
-     Y:<span id="accel_result_Y"></span>
-  <br>
-     Z:<span id="accel_result_Z"></span>
-  <br>
-  <button onclick="UART.write('LED1.set();\n');">LED On!</button>
-  <button onclick="UART.write('LED1.reset();\n');">LED Off!</button>
+
   
  </body>
 </html>

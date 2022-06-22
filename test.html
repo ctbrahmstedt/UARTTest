@@ -1,6 +1,6 @@
 <html>
  <head>
-  Myka Labs Bluetooth Data Collector <br>
+  Myka Labs Bluetooth Data Collector. <br>
  </head>
  <body>
   <script src="https://www.espruino.com/js/uart.js"></script>
@@ -18,6 +18,9 @@
        UART.eval('analogRead(D31)', function(c) {
       document.getElementById("ADC31_result").innerHTML = c;
     });
+ UART.write('pinMode(D29, "input_pulldown");\n');
+ UART.write('pinMode(D30, "input_pulldown");\n');
+ UART.write('pinMode(D31, "input_pulldown");\n');
   }
   </script>
   
